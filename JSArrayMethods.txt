@@ -1,0 +1,82 @@
+There is an important build in Array methods to know
+  -> Reduce
+  -> Map
+  -> filter
+  -> fill
+
+arr = [2, 3, 1, 5, 4];
+
+  REDUCE :
+   it's a kind of method that will reduce the entire array into a single value based upon the function definition
+     ex : 
+        let sum = arr.reduce( function( accumulator, currentValue ) { console.log("accumulator: " + accumulator + " currentValue: " + currentValue ); return  accumulator+currentValue} );
+        o/p 
+           accumulator: 2 currentValue: 3  // first and second index value of array
+           accumulator: 5 currentValue: 1
+           accumulator: 6 currentValue: 5
+           accumulator: 11 currentValue: 4
+           sum = 15 
+           
+           By default the accumulator will take the first index value of the array
+         lets try this
+           here I assign a initial value of accumlator as 10
+            sum =  arr.reduce(function( accumulator, currentValue ) {
+            console.log("accumulator: " + accumulator + " currentValue: " + currentValue ); return  accumulator+currentValue
+            }, 10
+            );
+            accumulator: 10 currentValue: 2   // cur_val is the first index value of the array becuase the acc were assigned as 10 by default
+            accumulator: 12 currentValue: 3
+            accumulator: 15 currentValue: 1
+            accumulator: 16 currentValue: 5
+            accumulator: 21 currentValue: 4
+            sum = 25;
+            
+          and also i can able to reduce the lines of code by using arrow function;
+            arr.reduce( (acc,c_val) => acc + c_val, 10 ); for finding the sum of the array 
+  MAP :
+     it will perform some opeartion for each value of the array and return a list of elements based on the operation
+    let ls = arr.map( val => val <= 3 ? 1 : 0 );
+    console.log( ls );
+     o/p 
+        [1, 1, 1, 0, 0]
+        
+  FILTER:
+    it will return filtered element on the array
+    arr.filter( val => val<= 3 );
+  o/p 
+    [ 2, 3, 1]
+  
+  LENGTH
+    it will return the length of the array
+      arr.length // 5
+    
+  FILL :      
+   it will filling the element on the array based on the given limit
+     arr.fill( 10, 0, 3);
+    o/p
+      [ 10, 10, 10, 5, 4]  // 0 ... 2
+   if the limit is not specified it will all of the array portions 
+     arr.fill( 10 );
+     [ 10, 10, 10, 10, 10]
+     
+  SORT :
+    it will sort the element in asending order
+      arr.sort();
+      [1, 2, 3, 4, 5] 
+    for descending order
+     ( arr.sort() ).reverse(); 
+     
+   REVERSE :
+    it will reverse the arry
+     arr.reverse();
+     [ 5, 4, 3, 2, 1 ]
+     
+   FIND :
+     it will return a single element based on the definition
+     arr.find( val => val>4 )  // 5
+    
+   CONCAT
+     it will concat the array of elements
+     arr.concat ( [ 6, 7, 8, 9 ] );
+     o/p 
+       [ 2, 4, 3, 1, 5, 6, 7, 8, 9 ]
