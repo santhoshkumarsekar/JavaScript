@@ -1,8 +1,11 @@
 There is an important build in Array methods to know
-  -> Reduce
-  -> Map
+  -> reduce
+  -> map
   -> filter
   -> fill
+  -> length
+  -> sort
+  and some methds
 
 arr = [2, 3, 1, 5, 4];
 
